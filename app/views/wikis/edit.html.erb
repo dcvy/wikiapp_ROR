@@ -1,0 +1,9 @@
+<h3>Update Wiki Details</h3>
+<%= form_with model: @wiki do |form| %>
+    <%= form.text_field :title, placeholder: "title" %>
+    <%= form.text_field :description, placeholder: "description" %>
+    <%= form.text_field :kind, placeholder: "kind" %>
+    <%= form.text_field :author, placeholder: "author" %>
+  <%= form.submit %>
+<% end %>
+
