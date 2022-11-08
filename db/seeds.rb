@@ -5,4 +5,7 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-Wiki.create(title: 'Nala', description: 'Born to be wild',kind: 'movie', author: 'vydoan')
+
+Category.create(name_type: 'Fiction')
+Category.create(name_type: 'Non-Fiction')
+Category.create(name_type: 'Biography')
