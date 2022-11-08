@@ -1,6 +1,6 @@
 class WikisController < ApplicationController
   before_action :current_wiki, only: [:show, :edit, :update, :destroy]
-
+  before_action :set_categories
   def index
     @wikis = Wiki.all
   end
@@ -40,11 +40,15 @@ class WikisController < ApplicationController
   private
 
   def wiki_params
-    params.require(:wiki).permit(:title, :description, :kind, :author)
+    params.require(:wiki).permit(:title, :description, :kind, :author, :category_id)
   end
 
   def current_wiki
     @wiki = Wiki.find(params[:id])
+  end
+
+  def set_categories
+    @categories = Category.all.order(:name_type)
   end
 
 end
