@@ -1,8 +1,11 @@
-<h1><%= @wiki.title %></h1>
-<h4><%= @wiki.description %></h4>
-<h4><%= @wiki.kind %></h4>
-<h4><%= @wiki.author %></h4>
-<h4><%= @wiki.category.name_type %></h4>
-<br/>
-<br/>
-<%= link_to sanitize("&larr; Back to home"), wikis_path %>
+<div class="container">
+    <h1><%= @wiki.title %></h1>
+    <h4><%= @wiki.description %></h4>
+    <h4><%= @wiki.kind %></h4>
+    <h4><%= @wiki.author %></h4>
+    <h4><%= @wiki.category.name_type %></h4>
+    <br/>
+    <br/>
+
+    <%= link_to sanitize("&larr; Back to home"), wikis_path, :class => "btn btn-success"%>
+</div>
