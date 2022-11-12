@@ -1,17 +1,16 @@
-<h3>Create a Wiki</h3>
-<%= form_with model: @wiki do |form| %>
-  <%= form.text_field :title, placeholder: "title" %>
-  <%= form.text_field :description, placeholder: "description" %>
-  <%= form.text_field :kind, placeholder: "kind" %>
-  <%= form.text_field :author, placeholder: "author" %>
-  <%= form.select :category_id, options_for_select(@categories.collect { |cat| [cat.name_type, cat.id]})%>
-  <%= form.submit %>
-<% end %>
-<%= link_to sanitize("&larr; Back to home"), wikis_path %>
-<!-- <%= form_for @wiki do |form| %>
-  <%= form.text_field :title, placeholder: 'title' %>
-  <%= form.text_field :description, placeholder: 'description' %>
-  <%= form.text_field :kind, placeholder: "kind" %>
-  <%= form.text_field :author, placeholder: "author" %>
-  <%= form.submit %>
-<% end %> -->
+<div class="container">
+  <h3>Create a Wiki</h3>
+  
+    <%= form_with model: @wiki do |form| %>
+    <div class="col">
+      <%= form.text_field :title, placeholder: "title", :class => "form-control" %>
+      <%= form.text_field :description, placeholder: "description", :class => "form-control" %>
+      <%= form.text_field :kind, placeholder: "kind", :class => "form-control" %>
+      <%= form.text_field :author, placeholder: "author", :class => "form-control" %>
+      <%= form.select :category_id, options_for_select(@categories.collect { |cat| [cat.name_type, cat.id]}), :class => "form-control"%>
+      <%= form.submit %>
+    </div>
+    <% end %>
+  
+  <%= link_to sanitize("&larr; Back to home"), wikis_path, :class => "btn btn-success"%>
+</div>
